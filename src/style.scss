@@ -1,29 +1,48 @@
-ul,
-li {
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6;
+}
+
+body {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul,
+li {
   list-style: none;
 }
 
-nav {
-  padding: 50px;
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
   text-align: center;
+}
 
-  > ul {
-    display: inline-block;
-    background: #ddd;
-    border-radius: 5px;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
+  background: #ddd;
 
-    > li {
-      float: left;
-      width: 150px;
-      height: 65px;
-      line-height: 65px;
-      position: relative;
-      text-transform: uppercase;
-      font-size: 14px;
+  > div {
+    position: relative;
+
+    > a {
       color: rgba(0, 0, 0, 0.7);
-      cursor: pointer;
+      padding: 1rem 2rem;
+      min-width: 15rem;
 
       &:hover {
         background: #d5d5d5;
@@ -33,38 +52,38 @@ nav {
   }
 }
 
-ul.drop-menu {
+.drop-menu {
   position: absolute;
   top: 100%;
   left: 0%;
-  width: 100%;
-  padding: 0;
 
   li {
     background: #666;
-    color: rgba(255, 255, 255, 0.7);
-
-    &:hover {
-      background: #606060;
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      padding: 1rem 2rem;
+      min-width: 15rem;
+      &:hover {
+        background: #606060;
+      }
     }
-
     &:last-child {
       border-radius: 0px 0px 5px 5px;
     }
   }
 }
 
-ul.drop-menu li {
+.drop-menu li {
   display: none;
 }
 
-li.menu-item.visible > ul.drop-menu li {
+.menu-item.visible > .drop-menu li {
   display: block;
 }
 
 // MENU 1
 
-li.menu-item.visible > ul.drop-menu {
+.menu-item.visible > .drop-menu {
   perspective: 1000px;
 
   li {
